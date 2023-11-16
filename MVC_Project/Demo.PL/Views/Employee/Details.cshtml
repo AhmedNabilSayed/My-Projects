@@ -1,0 +1,47 @@
+﻿
+
+@model EmployeeViewModel
+@{
+	ViewData["Title"] = "Details";
+}
+<div class="row mb-3">
+	<div class="col-8">
+		<form asp-action="Details" asp-controller="Employee" enctype="multipart/form-data">
+
+			<div class="form-group">
+				<label asp-for="@Model.Name" class="col-form-label"></label>
+				<input asp-for="@Model.Name" class="form-control" readonly />
+			</div>
+
+			<div class="form-group">
+				<label asp-for="@Model.Address" class="col-form-label"></label>
+				<input asp-for="@Model.Address" class="form-control" readonly />
+			</div>
+
+			<div class="form-group">
+				<label asp-for="@Model.Email" class="col-form-label"></label>
+				<input asp-for="@Model.Email" class="form-control" readonly />
+			</div>
+
+			<div class="form-group">
+				<label asp-for="@Model.Salary" class="col-form-label"></label>
+				<input asp-for="@Model.Salary" class="form-control" readonly/>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="@Model.HireDate" class="col-form-label"></label>
+				<input type="date" asp-for="@Model.HireDate" class="form-control" readonly />
+
+			</div>
+
+			<div class="form-group">
+				<label asp-for="@Model.DepartmentId" class="col-form-label"></label>
+				<input asp-for="@Model.DepartmentId" class="form-control" readonly />
+			</div>
+
+			<br />
+			<input type="submit" value="Add" class="btn btn-primary" />
+			<a asp-action="Index" class="btn btn-light">Back To List</a>
+		</form>
+	</div>
+</div>
