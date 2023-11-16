@@ -1,0 +1,30 @@
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.exe
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.deps.json
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.runtimeconfig.json
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.dll
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.pdb
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.csproj.AssemblyReference.cache
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.GeneratedMSBuildEditorConfig.editorconfig
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.AssemblyInfoInputs.cache
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.AssemblyInfo.cs
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.csproj.CoreCompileInputs.cache
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.dll
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\refint\C#_Exam.dll
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.pdb
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.genruntimeconfig.cache
+D:\Course Route\Exam\Exam 02\Exam 02 Anwer\C#_Exam\C#_Exam\obj\Debug\net6.0\ref\C#_Exam.dll
+D:\GitHup\Examination System\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.exe
+D:\GitHup\Examination System\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.deps.json
+D:\GitHup\Examination System\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.runtimeconfig.json
+D:\GitHup\Examination System\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.dll
+D:\GitHup\Examination System\C#_Exam\C#_Exam\bin\Debug\net6.0\C#_Exam.pdb
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.csproj.AssemblyReference.cache
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.AssemblyInfoInputs.cache
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.AssemblyInfo.cs
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.csproj.CoreCompileInputs.cache
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.dll
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\refint\C#_Exam.dll
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.pdb
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\C#_Exam.genruntimeconfig.cache
+D:\GitHup\Examination System\C#_Exam\C#_Exam\obj\Debug\net6.0\ref\C#_Exam.dll
