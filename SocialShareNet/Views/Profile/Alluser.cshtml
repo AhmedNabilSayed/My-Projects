@@ -1,0 +1,28 @@
+﻿@model IList<WebAp.Models.user>
+
+@{
+    ViewBag.Title = "Alluser";
+}
+<form method="post" action="/profile/searchname">
+    <label>search name</label><input type="text" name="sname" />
+    <input type="submit" value="search" />
+</form>
+
+<form method="post" action="/profile/searchemail">
+    <label>search email</label><input type="text" name="sname" />
+    <input type="submit" value="search" />
+</form>
+
+<form method="post" action="/profile/searchphone">
+    <label>search phone</label><input type="text" name="sname" />
+    <input type="submit" value="search" />
+</form>
+
+@{ foreach (var item in Model)
+    {
+        <img src="@item.photo" height="100px" />
+        <h3> @item.fname @item.lname</h3>
+        <h3><a href="/profile/addfriend/@item.id">add friend</a></h3>
+    }
+
+}

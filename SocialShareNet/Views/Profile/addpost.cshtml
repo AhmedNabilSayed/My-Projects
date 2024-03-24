@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "addpost";
+}
+
+<form method="post" action="/Profile/addpost" >
+    <input type="text"  name="posttext"/>
+    <br />
+    <label> privet</label><input type="radio" value="1"  name="pr"/>
+    <label> puplic</label> <input type="radio" value="2" name="pr" checked/>
+
+    <input type="submit" value="send" />
+</form>

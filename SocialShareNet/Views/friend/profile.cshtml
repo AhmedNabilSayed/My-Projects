@@ -1,0 +1,49 @@
+﻿@model WebAp.Models.user
+
+@{
+    ViewBag.Title = "profile";
+}
+
+
+<img src="@Model.photo" height="150px" />
+<h3>@Model.fname @Model.lname</h3>
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+@{foreach (var item in Model.posts)
+    {
+       if (item.privet==1)
+         {
+            continue;
+         }
+
+        <h1>@item.posttext</h1>
+
+        <h5>@item.Reacts.Where(m => m.rea == 1).ToList().Count()</h5>
+        <input type="button" value="like" onclick="sendReact('@item.id','@Session["userid"]', 1)" />
+        <h5>@item.Reacts.Where(m => m.rea == 2).ToList().Count()</h5>
+        <input type="button" value="dislike" onclick="sendReact('@item.id','@Session["userid"]', 2)" />
+
+        <br />
+        <input type="text" id="@item.id" />
+        <input type="button" onclick="sendcomment('@item.id','@Session["userid"]')" value="Send Comment" />
+        <br />
+        <br />
+        foreach (var i in item.Comments)
+        {
+            <img src="@i.user.photo" height="66px" />
+            <h6>@i.user.fname @i.user.lname</h6>
+            <h4>@i.commenttext</h4>
+        }
+    }
+
+}
+
+<script src="~/Scripts/Comment.js"></script>
+<script src="~/Scripts/react.js"></script>
