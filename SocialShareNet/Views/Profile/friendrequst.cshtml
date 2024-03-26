@@ -1,0 +1,14 @@
+﻿@model IList<WebAp.Models.fr_re>
+
+@{
+    ViewBag.Title = "friendrequst";
+}
+
+@{foreach (var item in Model)
+  {
+        <img src="@item.sender.photo" height="150px" />
+        <h3>@item.sender.fname @item.sender.lname</h3>
+        <h3><a href="/profile/accapt/@item.sender.id"> accapt </a></h3>
+        <h3><a href="/profile/reject/@item.sender.id"> reject </a></h3>
+  }
+}

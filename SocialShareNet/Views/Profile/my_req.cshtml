@@ -1,0 +1,15 @@
+﻿@model IList<WebAp.Models.fr_re>
+
+@{
+    ViewBag.Title = "my_req";
+}
+
+@{  foreach (var item in Model)
+    {
+        <img src="@item.resver.photo" height="150px"/>
+        <h3>@item.resver.fname @item.resver.lname</h3>
+
+        <h3><a href="/profile/cancal/@item.resver.id"> Cancel </a></h3>
+     }
+}
+

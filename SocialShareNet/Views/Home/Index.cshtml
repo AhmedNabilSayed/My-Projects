@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginView.cshtml";
+}
+<div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+<div class="card-body">
+    <form method="post" action="/Home/Index">
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" name="email" />
+            <label for="inputEmail">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="inputPassword" type="password" name="pass" />
+            <label for="inputPassword">Password</label>
+        </div>
+        <a href="/Home/signin" class="d-flex align-items-center justify-content-between mt-4 mb-0">
+            <input class="btn btn-primary" type="submit" value="send" />
+        </a>
+    </form>
+    </div>

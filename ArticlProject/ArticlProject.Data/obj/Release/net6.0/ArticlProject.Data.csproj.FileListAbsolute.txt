@@ -1,0 +1,17 @@
+E:\ArticlProject\ArticlProject.Data\bin\Release\net6.0\ArticlProject.Data.deps.json
+E:\ArticlProject\ArticlProject.Data\bin\Release\net6.0\ArticlProject.Data.runtimeconfig.json
+E:\ArticlProject\ArticlProject.Data\bin\Release\net6.0\ArticlProject.Data.dll
+E:\ArticlProject\ArticlProject.Data\bin\Release\net6.0\ArticlProject.Data.pdb
+E:\ArticlProject\ArticlProject.Data\bin\Release\net6.0\ArticlProject.Core.dll
+E:\ArticlProject\ArticlProject.Data\bin\Release\net6.0\ArticlProject.Core.pdb
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.csproj.AssemblyReference.cache
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.AssemblyInfoInputs.cache
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.AssemblyInfo.cs
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.csproj.CoreCompileInputs.cache
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.csproj.CopyComplete
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.dll
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\refint\ArticlProject.Data.dll
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.pdb
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ArticlProject.Data.genruntimeconfig.cache
+E:\ArticlProject\ArticlProject.Data\obj\Release\net6.0\ref\ArticlProject.Data.dll

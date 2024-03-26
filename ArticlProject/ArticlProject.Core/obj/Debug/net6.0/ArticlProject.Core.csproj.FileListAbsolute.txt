@@ -1,0 +1,12 @@
+E:\ArticlProject\ArticlProject.Core\bin\Debug\net6.0\ArticlProject.Core.deps.json
+E:\ArticlProject\ArticlProject.Core\bin\Debug\net6.0\ArticlProject.Core.dll
+E:\ArticlProject\ArticlProject.Core\bin\Debug\net6.0\ArticlProject.Core.pdb
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ArticlProject.Core.csproj.AssemblyReference.cache
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ArticlProject.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ArticlProject.Core.AssemblyInfoInputs.cache
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ArticlProject.Core.AssemblyInfo.cs
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ArticlProject.Core.csproj.CoreCompileInputs.cache
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ArticlProject.Core.dll
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\refint\ArticlProject.Core.dll
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ArticlProject.Core.pdb
+E:\ArticlProject\ArticlProject.Core\obj\Debug\net6.0\ref\ArticlProject.Core.dll

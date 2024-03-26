@@ -1,0 +1,18 @@
+﻿@model IList<WebAp.Models.friend>
+
+@{
+    ViewBag.Title = "allfriend";
+}
+
+@{ 
+    foreach (var item in Model)
+    {
+        <a href="/friend/profile/@item.friendtow.id">
+              <img src="@item.friendtow.photo" height="150px" />
+        </a>
+        
+        <h3>@item.friendtow.fname @item.friendtow.lname</h3>
+    }
+}
+
+
