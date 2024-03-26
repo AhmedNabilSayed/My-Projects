@@ -1,0 +1,44 @@
+﻿@model List<TourismPlaces.ViewModels.Admin.UserRoleViewModel>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Role";
+}
+@{
+    var roleId = ViewBag.roleId;
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add or remove users from this role</h4>
+                <p class="card-description">
+                    role to user
+                </p>
+                <form class="forms-sample" method="post" asp-action="AddUsersToRole" asp-controller="Admin">
+
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+
+                        <input type="hidden" asp-for="@Model[i].UserId"/>
+                        <input type="hidden" asp-for="@Model[i].UserName" />
+                        <input type="hidden" asp-for="@Model[i].Email" />
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input asp-for="@Model[i].IsSelected" type="checkbox" class="form-check-input" >
+                                <i class="input-helper"></i>
+                                @Model[i].Email
+                            </label>
+                        </div>
+
+
+                    }
+
+                    <button asp-route-roleId="@roleId" class="btn btn-primary btn-rounded btn-fw" type="submit">Update</button>
+                    <button asp-action="Role"  asp-controller="Admin" class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

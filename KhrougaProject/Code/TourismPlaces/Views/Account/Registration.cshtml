@@ -1,0 +1,60 @@
+﻿@model TourismPlaces.ViewModels.Account.RegistrationViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Registration";
+}
+
+
+<h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+<form class="pt-3" asp-action="Registration" asp-controller="Account">
+    <div class="text-danger" asp-validation-summary="All">
+    </div>
+
+
+    <div class="form-group">
+        <input type="text" class="form-control form-control-lg" asp-for="UserName" placeholder="Username">
+        <span class="text-danger" asp-validation-for="UserName"></span>
+    </div>
+
+
+    <div class="form-group">
+        <input type="email" class="form-control form-control-lg" asp-for="Email" placeholder="user@domain.com">
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+
+
+    <div class="form-group">
+        <select class="form-control form-control-lg" asp-for="GovernmentId" asp-items="@(SelectList)ViewBag.GovernmentList">
+            <option>Choose Goverment</option>
+        </select>
+        <span class="text-danger" asp-validation-for="GovernmentId"></span>
+    </div>
+
+
+    <div class="form-group">
+        <input type="password" class="form-control form-control-lg" asp-for="Password"  placeholder="Password">
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control form-control-lg" asp-for="ConfirmPassword" placeholder="Confirm Password">
+        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN UP</button>
+    </div>
+    <div class="text-center mt-4 font-weight-light">
+        Already have an account? <a asp-action="Index" asp-controller="Account" class="text-primary">Login</a>
+    </div>
+</form>
+
+@section Scripts
+    {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    }
+
+

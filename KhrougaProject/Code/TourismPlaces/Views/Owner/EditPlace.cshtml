@@ -1,0 +1,146 @@
+﻿@model TourismPlaces.ViewModels.EditPlaceViewwModel
+@{
+    Layout = "~/Views/Shared/_OwnerLayout.cshtml";
+    ViewBag.Title = "Place";
+}
+<form method="post" asp-action="EditPlace" enctype="multipart/form-data">
+    <div class="row">
+            @for (int i = 0; i < Model.Photos.Count; i++)
+                    {
+        <div class="col-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-danger tex-bold">Uncheck to remove</h4>
+                
+
+                        <input type="hidden" asp-for="Photos[i].PhotoPath" />
+                        <input type="hidden" asp-for="Photos[i].Id" />
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input asp-for="@Model.Photos[i].IsPhotoSelected" type="checkbox" class="form-check-input">
+                                <i class="input-helper"></i>
+                                <img src="~/Files/photos/@Model.Photos[i].PhotoPath" style="width:150px;height:150px;" />
+                            </label>
+                        </div>
+
+
+                   
+
+
+                </div>
+            </div>
+            </div>
+        }
+
+    </div>
+
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Places</h4>
+                    <p class="card-description">
+                        Remove place
+                    </p>
+
+                    <form method="post" asp-action="UpdatePlace" asp-controller="Owner">
+                        <div class="form-group">
+                            <label asp-for="Name">Archaeological Name</label>
+                            <input type="text" class="form-control form-control-lg" asp-for="Name" placeholder="Archaeological Name">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="Address">Archaeological Address</label>
+
+                            <input type="text" class="form-control form-control-lg" asp-for="Address" placeholder="Ex : row name /building number">
+                        </div>
+
+
+               
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-primary text-white">EGP</span>
+                                </div>
+                                <input type="text" class="form-control" asp-for="EntrancePrice" placeholder="Entrance Price" aria-label="Amount (to the nearest dollar)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-primary text-white">
+                                        <span id="rangeval">@Model.rate.ToString().TrimEnd('0')</span>
+                                    </span>
+                                </div>
+                                <input type="range" class="form-control" asp-for="rate" step="0.5" min="0" max="5" onInput="$('#rangeval').html($(this).val())">
+                                <div class="input-group-append">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <textarea type="text" class="form-control form-control-lg" asp-for="Details" rows="4" placeholder="Archaeological Details "></textarea>
+                            <span class="text-danger" asp-validation-for="Details"></span>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <label asp-for="@Model.GovernmentId">Government</label>
+                            <select class="form-control form-control-lg" asp-for="@Model.GovernmentId" asp-sel asp-items="@(SelectList)ViewBag.GovernmentList">
+                                <option>Choose Goverment</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="file" multiple asp-for="PhotosToAdd" />
+                            <span class="text-danger" asp-validation-for="PhotosToAdd"></span>
+                        </div>
+
+
+                        <div class="form-check form-check-success">
+                            <label asp-for="IsDeleted" class="form-check-label">
+
+                                <input type="checkbox" asp-for="IsDeleted" class="form-check-input">
+                                Is Live
+                                <i class="input-helper"></i>
+                                <span class="card-description pull-right"> Users will view your post</span>
+                            </label>
+                        </div>
+
+
+
+
+
+                        <input type="hidden" asp-for="@Model.PlaceId" />
+                        <div class="form-group">
+
+                            <button type="submit" class="btn btn-dark btn-icon-text">
+                                Update
+                                <i class="mdi mdi-content-save btn-icon-append"></i>
+                            </button>
+
+
+                            <a asp-action="Index" asp-controller="Owner" class="btn btn-info btn-rounded btn-fw">Go Back</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,136 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/*body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+}*/
+form.gender-details.gender-title {
+    font-size: 50px;
+    font-weight: 500;
+}
+.Title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+    .Title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+.cap {
+    max-width: 700px;
+    width: 1000px;
+    margin:0 auto 0 auto;
+    margin-bottom:20px;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+form input[type="radio"] {
+    display: none;
+}
+body {
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center;
+}
+form .button {
+    height: 45px;
+    margin: 35px 0;
+    margin-left:6px;
+}
+
+    form .button input {
+        height: 100%;
+        width: 600px;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+
+        form .button input:hover {
+            /* transform: scale(0.99); */
+            background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+        }
+form .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+form .input-box label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+form .input-box input {
+    height: 45px;
+    width: 600px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+    form .input-box input:focus,
+    form .input-box input:valid {
+        border-color: #9b59b6;
+    }
+footer ul li{
+    display: inline-block;
+    font-size: 20px;
+    color: #000;
+   
+}
+    footer ul {
+        margin-left:500px;
+    }
+        footer ul li a:hover {
+            color: #00BFFF;
+        }
+        footer ul li a {
+            color: #FFFAF0;
+        }
+header .nav-item {
+    margin-left:50px;
+    font-size:20px;
+    font-weight:bold;
+}
+.heed {
+    color: #1E90FF;
+    font-family: cursive;
+}
+.Welcome {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+}

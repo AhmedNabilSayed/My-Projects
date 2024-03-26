@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Khrouga-خــــروجة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image" href="~/icon.ico">
+    <link rel="stylesheet" href="~/css/HomePage.css">
+</head>
+<body>
+    @*<p>welcome to Khrouga-خــــروجة</p>*@
+    <div class="haad">
+        <ul>
+            <li>
+                <p>Welcome To Khrou<span class="opt">ga-خــــروجة</span></p>
+            </li>
+            <li class="spa">
+                <a href="~/Account/Registration">Register</a>
+            </li>
+           
+            <li class="spa">
+                <a href="~/Account/Index">Login</a>
+            </li>
+            <li class="spa">
+                <a href="~/Account/HomePage">Home</a>
+            </li>
+        </ul>
+        <span>
+            Choose your destination
+        </span>
+    </div>      
+    
+    <!-- Navbar Start -->
+    @*<div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">Tourisma</span>ny</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="~/Home/Index" class="nav-item nav-link active">Home</a>
+                        <a href="~/Account/Index" class="nav-item nav-link">Login</a>
+                        <a href="~/Account/Registration" class="nav-item nav-link">Register</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>*@
+    <!-- Navbar End -->
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

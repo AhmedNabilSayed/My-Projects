@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title | Khrouga-خــــــروجة</title>
+    <link rel="stylesheet" href="~/">
+    <link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/Login/CustomStyle.css">
+    <link rel="shortcut icon" href="~/favicon.png" />
+</head>
+<body >
+    
+    <div class="container-scroller d-flex">
+    <div class="container-fluid page-body-wrapper full-page-wrapper d-flex">
+            <div class="content-wrapper d-flex align-items-center auth px-0" id="bodyAuth">
+    <div class="row w-100 mx-0">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                            <div class="brand-logo">
+                                <img style="width:80px" src="~/Login/Image.jpg" alt="logo">
+                            </div>
+                            <h4>Hello! Welcome To <b>Khrouga-خـــــروجة</b></h4>
+                            @RenderBody()
+
+                        </div>
+                    </div>
+     </div>
+       </div>
+
+    </div>
+
+     </div>
+  
+   
+
+
+   @* <script src="~/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/vendors/js/off-canvas.js"></script>
+    <script src="~/vendors/js/hoverable-collapse.js"></script>*@
+
+    <script src="~/vendors/js/template.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+
+</body>
+</html>

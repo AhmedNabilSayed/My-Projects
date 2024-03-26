@@ -1,0 +1,199 @@
+﻿@using TourismPlaces.Data.Models;
+
+@inject Microsoft.AspNetCore.Identity.SignInManager<ApplicationUser> signInManger
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width" />
+    <title>Owner | Khrouga-خــــروجة</title>
+
+
+    <link rel="stylesheet" href="~/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
+  
+    <link rel="stylesheet" href="~/css/style.css">
+   
+   
+
+    
+
+
+    <link rel="stylesheet" href="~/Login/CustomStyle.css">
+
+    <link rel="shortcut icon" href="~/favicon.png" />
+</head>
+<body>
+    @{
+        DateTime currentDate = DateTime.Now;
+    }
+    @******************************************************************************************************************************@
+    @*-------Start of Side Bar ------*@
+  
+
+    <div class="container-scroller d-flex">
+
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item sidebar-category">
+                    <p>Navigation</p>
+                    <span></span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="OwnerDashboard" asp-controller="Owner">
+                        <i class="mdi mdi-view-quilt menu-icon"></i>
+                        <span class="menu-title">Dashboard</span>
+
+                    </a>
+                </li>
+                <li class="nav-item sidebar-category">
+                    <p>Components</p>
+                    <span></span>
+                </li>
+        
+         
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Index" asp-controller="Owner">
+                        <i class="mdi mdi-view-headline menu-icon"></i>
+                        <span class="menu-title">Owner Places</span>
+                    </a>
+                </li>
+               @* <li>
+                    <a class="active" asp-action="ContactUsMobiles" asp-controller="User">Contact Us</a>
+                </li>*@
+
+            </ul>
+        </nav>
+        @*-------End of Side Bar ------*@
+        @******************************************************************************************************************************@
+
+
+
+
+
+        <div class="container-fluid page-body-wrapper">
+            <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
+
+
+                <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                    @*This button for minimize*@
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+
+                    <div class="navbar-brand-wrapper">
+                        <a class="navbar-brand brand-logo" asp-action="Index" asp-controller="Owner"><img style="width:80px" src="~/Login/Image.jpg" alt="logo" /></a>
+                        <a class="navbar-brand brand-logo-mini" asp-action="Index" asp-controller="Owner"><img style="width:80px" src="~/Login/Image.jpg" alt="logo" /></a>
+                    </div>
+                    @if (signInManger.IsSignedIn(User))
+                    {
+                        <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, @User.Identity.Name</h4>
+
+                    }
+
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item">
+                            <h4 class="mb-0 font-weight-bold d-none d-xl-block">@currentDate.ToLongDateString()</h4>
+                        </li>
+
+                    </ul>
+
+
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+
+                </div>
+
+
+                <div class="navbar-menu-wrapper navbar-search-wrapper d-none d-lg-flex align-items-center">
+                    <ul class="navbar-nav mr-lg-2">
+                        <li class="nav-item nav-search d-none d-lg-block">
+                            <div class="input-group">
+                                @*<input type="text" class="form-control" placeholder="Search Here..." aria-label="search" aria-describedby="search">*@
+                                <h4 class="d-inline-flex font-italic" style="color:gray; ">All tourism places in one site</h4>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav navbar-nav-right">
+
+                        <li class="nav-item nav-profile dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                             @if (signInManger.IsSignedIn(User))
+                                {
+
+
+                                    <span class="nav-profile-name font-stretch font-italic" style="font-size:20px;color:gray;">@User.Identity.Name</span>
+                                }
+
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                                <a class="dropdown-item" asp-action="ChangePassword" asp-controller="Account">
+                                    <i class="mdi mdi-settings text-primary"></i>
+                                    Change Password
+                                </a>
+                                <a class="dropdown-item" asp-action="Logout" asp-controller="Account">
+                                    <i class="mdi mdi-logout text-primary"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                      
+                    </ul>
+                </div>
+
+
+
+            </nav>
+
+
+            @******************************************************************************************************************************@
+            @*-------Start of body ------*@
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @RenderBody()
+                </div>
+
+
+
+                @*-------End of body ------*@
+                @******************************************************************************************************************************@
+
+
+
+
+                <hr />
+             
+            </div>
+
+        </div>
+    </div>
+    
+
+    @******************************************************************************************************************************@
+@*    @{
+       await Html.RenderPartialAsync("_ChangePasswordPartial");
+    }
+  *@
+    @******************************************************************************************************************************@
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+   <script src="~/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/js/js/hoverable-collapse.js"></script>
+    <script src="~/js/js/template.js"></script>
+    <script src="~/js/js/dashboard.js"></script>
+
+
+    @await Component.InvokeAsync("NToastNotify")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
