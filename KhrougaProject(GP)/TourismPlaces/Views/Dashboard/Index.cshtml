@@ -1,0 +1,256 @@
+﻿@using TourismPlaces.ViewModels.Dashboard;
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Dashboard";
+    int counter = 0;
+}
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="row w-100 flex-grow">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Users Types Goverment</p>
+                        <p class="text-muted"></p>
+                        <div id="userTypes" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-6">
+        <div class="row w-100 flex-grow">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Who uses the website</p>
+                        <p class="text-muted">Users vs Owners</p>
+                        <div id="userOwnerCount" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="row w-100 flex-grow">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Places in Goverment</p>
+                        <p class="text-muted">Numbers of places in every government</p>
+                        <div id="GovernmentCount" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Users</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                  #
+                                </th>
+                                <th>
+                                    User name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                   Role
+                                </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                         
+                            @foreach (var item in (List<AdminInformationViewModel>)ViewBag.AdminInfo)
+                            {
+                                <tr>
+                                    <td class="py-1">
+                                       @(++counter)
+                                    </td>
+                                    <td>
+                                       @item.UserName
+                                    </td>
+                                    <td>
+                                       @item.Email
+                                    </td>
+                                   
+                                    @if (item.RoleName=="owner")
+                                    {
+                                        <td style="color:#618293;">
+                                           @item.RoleName
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td style="color:#eea875;">
+                                            @item.RoleName
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+ 
+
+    <script src="~/canvasChart/canvasjs.min.js"></script>
+    <script src="~/canvasChart/jquery-1.11.1.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            governmentCount();
+            userOwner();
+            userTypesInGovernment();
+
+        }
+
+
+        function userOwner() {
+            var visitorsData = {
+                "User vs Owner": [{
+                    cursor: "pointer",
+                    explodeOnClick: false,
+                    innerRadius: "75%",
+                    legendMarkerType: "square",
+                    name: "User",
+                    radius: "100%",
+                    showInLegend: true,
+                    startAngle: 90,
+                    type: "doughnut",
+                    dataPoints: @Html.Raw(ViewBag.NewVsReturningVisitors)
+                                            }]
+
+            };
+
+            var newVSReturningVisitorsOptions = {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "User vs Owner"
+                }
+                ,
+                legend: {
+                    fontFamily: "calibri",
+                    fontSize: 14,
+
+                },
+                data: []
+            };
+
+            var visitorsDrilldownedChartOptions = {
+                animationEnabled: true,
+                theme: "light2",
+                axisX: {
+                    labelFontColor: "#717171",
+                    lineColor: "#a2a2a2",
+                    tickColor: "#a2a2a2"
+                },
+                axisY: {
+                    gridThickness: 0,
+                    includeZero: false,
+                    labelFontColor: "#717171",
+                    lineColor: "#a2a2a2",
+                    tickColor: "#a2a2a2",
+                    lineThickness: 1
+                },
+                data: []
+            };
+
+            var chart = new CanvasJS.Chart("userOwnerCount", newVSReturningVisitorsOptions);
+            chart.options.data = visitorsData["User vs Owner"];
+            chart.render();
+        }
+
+        function governmentCount() {
+            var chart = new CanvasJS.Chart("GovernmentCount", {
+                animationEnabled: true,
+                theme: "light2", // "light1", "dark1", "dark2"
+                exportEnabled: true,
+             
+                data: [{
+                    type: "column",
+                    dataPoints: @Html.Raw(ViewBag.dataPointsGovernmentCount)
+                            }]
+            });
+            chart.render();
+
+
+        }
+
+
+        function userTypesInGovernment() {
+
+            var chart = new CanvasJS.Chart("userTypes", {
+                animationEnabled: true,
+                title: {
+                    text: "Demographics of users type in each government"
+                },
+                toolTip: {
+                    shared: true
+                },
+                axisY: {
+                    title: "No. of Users"
+                },
+                legend: {
+                    cursor: "pointer",
+                    verticalAlign: "center",
+                    horizontalAlign: "right",
+                    itemclick: toggleDataSeries
+                },
+                data: [{
+                    type: "stackedColumn",
+                    name: "Regular users",
+                    showInLegend: "true",
+                    dataPoints: @Html.Raw(ViewBag.userDataPointsChart)
+                    },
+                {
+                    type: "stackedColumn",
+                    name: "Owners",
+                    showInLegend: "true",
+                    dataPoints: @Html.Raw(ViewBag.ownerDataPointsChart)
+                    }]
+            });
+            chart.render();
+        }
+
+        function toggleDataSeries(e) {
+            if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+            }
+            else {
+                e.dataSeries.visible = true;
+            }
+            chart.render();
+        }
+
+    </script>
+}

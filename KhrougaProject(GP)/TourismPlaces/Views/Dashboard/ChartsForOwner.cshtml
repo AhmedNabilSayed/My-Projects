@@ -1,0 +1,210 @@
+﻿@using TourismPlaces.ViewModels.Dashboard;
+
+@{
+    Layout = "~/Views/Shared/_OwnerLayout.cshtml";
+    ViewBag.Title = "Dashboard";
+    int counter = 0;
+}
+
+
+
+<div class="row">
+    <div class="col-6">
+        <div class="row w-100 flex-grow">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Total places and users</p>
+                        <p class="text-muted">Places and Users</p>
+                        <div id="userOwnerCount" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="row w-100 flex-grow">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Places</p>
+                        <p class="text-muted">Approved vs Pending</p>
+                        <div id="approvedPendingChart" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="row w-100 flex-grow">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Places in Government</p>
+                        <p class="text-muted">Owner places in each Government</p>
+                        <div id="GovernmentCount" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts{
+
+
+
+    <script src="~/canvasChart/canvasjs.min.js"></script>
+    <script src="~/canvasChart/jquery-1.11.1.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            governmentCount();
+            userPlace();
+            approvedPlace();
+
+        }
+
+
+        function userPlace() {
+            var visitorsData = {
+                "Places vs users": [{
+                    cursor: "pointer",
+                    explodeOnClick: false,
+                    innerRadius: "75%",
+                    legendMarkerType: "square",
+                    name: "Places",
+                    radius: "100%",
+                    showInLegend: true,
+                    startAngle: 90,
+                    type: "doughnut",
+                    dataPoints: @Html.Raw(ViewBag.NewVsReturningVisitors)
+                                                            }]
+
+            };
+
+            var newVSReturningVisitorsOptions = {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Places vs users"
+                }
+                ,
+                legend: {
+                    fontFamily: "calibri",
+                    fontSize: 14,
+
+                },
+                data: []
+            };
+
+            var visitorsDrilldownedChartOptions = {
+                animationEnabled: true,
+                theme: "light2",
+                axisX: {
+                    labelFontColor: "#717171",
+                    lineColor: "#a2a2a2",
+                    tickColor: "#a2a2a2"
+                },
+                axisY: {
+                    gridThickness: 0,
+                    includeZero: false,
+                    labelFontColor: "#717171",
+                    lineColor: "#a2a2a2",
+                    tickColor: "#a2a2a2",
+                    lineThickness: 1
+                },
+                data: []
+            };
+
+            var chart = new CanvasJS.Chart("userOwnerCount", newVSReturningVisitorsOptions);
+            chart.options.data = visitorsData["Places vs users"];
+            chart.render();
+        }
+
+
+        function approvedPlace() {
+            var visitorsData = {
+                "Approved vs Pending": [{
+                    cursor: "pointer",
+                    explodeOnClick: false,
+                    innerRadius: "75%",
+                    legendMarkerType: "square",
+                    name: "Places",
+                    radius: "100%",
+                    showInLegend: true,
+                    startAngle: 90,
+                    type: "doughnut",
+                    dataPoints: @Html.Raw(ViewBag.resultPlaceApproved)
+                                                                        }]
+
+            };
+
+            var newVSReturningVisitorsOptions = {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Approved vs Pending"
+                }
+                ,
+                legend: {
+                    fontFamily: "calibri",
+                    fontSize: 14,
+
+                },
+                data: []
+            };
+
+            var visitorsDrilldownedChartOptions = {
+                animationEnabled: true,
+                theme: "light2",
+                axisX: {
+                    labelFontColor: "#717171",
+                    lineColor: "#a2a2a2",
+                    tickColor: "#a2a2a2"
+                },
+                axisY: {
+                    gridThickness: 0,
+                    includeZero: false,
+                    labelFontColor: "#717171",
+                    lineColor: "#a2a2a2",
+                    tickColor: "#a2a2a2",
+                    lineThickness: 1
+                },
+                data: []
+            };
+
+            var chart = new CanvasJS.Chart("approvedPendingChart", newVSReturningVisitorsOptions);
+            chart.options.data = visitorsData["Approved vs Pending"];
+            chart.render();
+        }
+        function governmentCount() {
+            var chart = new CanvasJS.Chart("GovernmentCount", {
+                animationEnabled: true,
+                theme: "light2", // "light1", "dark1", "dark2"
+                exportEnabled: true,
+
+                data: [{
+                    type: "column",
+                    dataPoints: @Html.Raw(ViewBag.dataPointsGovernmentCountByOwnerId)
+                                            }]
+            });
+            chart.render();
+
+
+        }
+
+
+
+    </script>
+}

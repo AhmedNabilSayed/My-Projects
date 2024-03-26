@@ -1,0 +1,115 @@
+﻿@model TourismPlaces.ViewModels.PlacesCreateViewModel
+@{
+    Layout = "~/Views/Shared/_OwnerLayout.cshtml";
+    ViewBag.Title = "Place";
+}
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Places</h4>
+                <p class="card-description">
+                    app place
+                </p>
+                <form class="pt-3" asp-action="AddPlace" asp-controller="Owner" method="post" enctype="multipart/form-data">
+                    <div class="text-danger" asp-validation-summary="All">
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" asp-for="Name" placeholder="Archaeological Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" asp-for="Address" placeholder="Ex : Archaeological place Address">
+                        <span class="text-danger" asp-validation-for="Address"></span>
+                    </div>
+
+
+               
+
+
+
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-primary text-white">EGP</span>
+                            </div>
+                            <input type="text" class="form-control" asp-for="EntrancePrice" placeholder="Entrance Price" aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                            <span class="text-danger" asp-validation-for="EntrancePrice"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-primary text-white" >
+                                    <span id="rangeval" >2.5</span>
+                                </span>
+                            </div>
+                            <input type="range" class="form-control" asp-for="rate" step="0.5" min="0" max="5" onInput="$('#rangeval').html($(this).val())">
+                            <div class="input-group-append">
+                                
+                            </div>
+                            <span class="text-danger" asp-validation-for="rate"></span>
+                        </div>
+                    </div>
+
+
+
+      
+                    <div class="form-group">
+                        <textarea type="text" class="form-control form-control-lg" asp-for="Details" rows="4" placeholder="Archaeological Details "></textarea>
+                        <span class="text-danger" asp-validation-for="Details"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <select class="form-control form-control-lg" asp-for="GovernmentId" asp-items="@(SelectList)ViewBag.GovernmentList">
+                            <option>Choose Goverment</option>
+                        </select>
+                        <span asp-validation-for="GovernmentId"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" type="file" multiple asp-for="photos" />
+                        <span  class="text-danger" asp-validation-for="photos"></span>
+                    </div>
+
+
+                    <div class="form-check form-check-success">
+                        <label asp-for="IsDeleted" class="form-check-label">
+                           
+                            <input type="checkbox" asp-for="IsDeleted" class="form-check-input" checked="">
+                            Go Live 
+                            <i class="input-helper"></i>
+                            <span class="card-description pull-right"> Users will view your post</span>
+                        </label>
+                    </div>
+
+
+                    <div class="text-center mt-4 font-weight-light">
+                        <button type="submit"  class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Add</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+    {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    }
+

@@ -1,0 +1,46 @@
+﻿@model TourismPlaces.ViewModels.Admin.RoleDetailsViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Index";
+}
+<div class="row">
+    @*asp-route-roleId="@role.Id"*@
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Role</h4>
+                <div>
+                    <label asp-for="RoleId">Role Id</label>
+                    <input type="text" class="form-control" value="@Model.RoleId" readonly disabled asp-for="RoleId">
+                </div>
+
+                <label asp-for="RoleName">Role Name</label>
+                <input type="text" class="form-control" value="@Model.RoleName" readonly disabled asp-for="RoleName">
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Users in role</h4>
+                @for (int i = 0; i < Model.Users.Count; i++)
+                {
+                    <div>
+                        
+                        <input type="text" class="form-control" value="@Model.Users[i].Email" readonly disabled asp-for="@Model.Users[i].Email">
+                    </div>
+                }
+            </div>
+
+            <div class="card-footer">
+                <a asp-action="AddUsersToRole" asp-controller="Admin" asp-route-roleId="@Model.RoleId" class="btn btn-success btn-rounded btn-fw">Add users to role</a>
+            </div>
+        </div>
+    </div>
+</div>

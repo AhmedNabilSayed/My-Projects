@@ -1,0 +1,9 @@
+﻿#bodyAuth {
+    background-image: url('../Login/Login_Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: auto;
+    height: auto;
+}
+
